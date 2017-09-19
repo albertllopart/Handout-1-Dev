@@ -71,6 +71,9 @@ public:
 	j1Audio*			audio;
 	j1Scene*			scene;
 
+	xml_document config;
+	xml_node node;
+
 
 private:
 
@@ -80,9 +83,9 @@ private:
 
 	// TODO 2: Create two new variables from pugui namespace:
 	// a xml_document to store the while config file and
-	xml_document config;
+	
 	// a xml_node to read specific branches of the xml
-	xml_node node;
+	
 
 	int					argc;
 	char**				args;

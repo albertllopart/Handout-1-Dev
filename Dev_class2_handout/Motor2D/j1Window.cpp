@@ -34,26 +34,26 @@ bool j1Window::Awake()
 		//Create window
 		Uint32 flags = SDL_WINDOW_SHOWN;
 
-		width = WIDTH;
-		height = HEIGHT;
-		scale = SCALE;
+		width = App->node.child("macros").child("WIDTH").attribute("value").as_int();
+		height = App->node.child("macros").child("HEIGHT").attribute("value").as_int();
+		scale = App->node.child("macros").child("SCALE").attribute("value").as_int();
 
-		if(FULLSCREEN)
+		if(App->node.child("macros").child("FULLSCREEN").attribute("value").as_int())
 		{
 			flags |= SDL_WINDOW_FULLSCREEN;
 		}
 
-		if(BORDERLESS)
+		if(App->node.child("macros").child("BORDERLESS").attribute("value").as_int())
 		{
 			flags |= SDL_WINDOW_BORDERLESS;
 		}
 
-		if(RESIZABLE)
+		if(App->node.child("macros").child("RESIZABLE").attribute("value").as_int())
 		{
 			flags |= SDL_WINDOW_RESIZABLE;
 		}
 
-		if(FULLSCREEN_WINDOW)
+		if(App->node.child("macros").child("FULLSCREEN_WINDOW").attribute("value").as_int())
 		{
 			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 		}

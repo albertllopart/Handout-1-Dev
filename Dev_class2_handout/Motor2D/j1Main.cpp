@@ -32,9 +32,10 @@ int main(int argc, char* args[])
 
 	while(state != EXIT)
 	{
+		xml_node *pawake = nullptr;
 		switch(state)
 		{
-
+			
 			// Allocate the engine --------------------------------------------
 			case CREATE:
 			LOG("CREATION PHASE ===============================");
@@ -51,7 +52,7 @@ int main(int argc, char* args[])
 			// Awake all modules -----------------------------------------------
 			case AWAKE:
 			LOG("AWAKE PHASE ===============================");
-			if(App->Awake() == true)
+			if(App->Awake(pawake) == true)
 				state = START;
 			else
 			{

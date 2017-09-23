@@ -5,8 +5,8 @@
     <BORDERLESS value ="false"></BORDERLESS>
     <RESIZABLE value ="true"></RESIZABLE>
     <FULLSCREEN_WINDOW value ="false"></FULLSCREEN_WINDOW>
-    <WIDTH value ="1024"></WIDTH>
-    <HEIGHT value ="768"></HEIGHT>
+    <WIDTH value ="700"></WIDTH>
+    <HEIGHT value ="400"></HEIGHT>
     <SCALE value ="1"></SCALE>
   </macros>
 </config>

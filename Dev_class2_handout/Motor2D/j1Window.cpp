@@ -19,7 +19,7 @@ j1Window::~j1Window()
 }
 
 // Called before render is available
-bool j1Window::Awake()
+bool j1Window::Awake(xml_node& quick)
 {
 	LOG("Init SDL window & surface");
 	bool ret = true;
@@ -33,27 +33,26 @@ bool j1Window::Awake()
 	{
 		//Create window
 		Uint32 flags = SDL_WINDOW_SHOWN;
+		width = quick.child("WIDTH").attribute("value").as_int();
+		height = quick.child("HEIGHT").attribute("value").as_int();
+		scale = quick.child("SCALE").attribute("value").as_int();
 
-		width = App->node.child("macros").child("WIDTH").attribute("value").as_int();
-		height = App->node.child("macros").child("HEIGHT").attribute("value").as_int();
-		scale = App->node.child("macros").child("SCALE").attribute("value").as_int();
-
-		if(App->node.child("macros").child("FULLSCREEN").attribute("value").as_bool())
+		if(quick.child("FULLSCREEN").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_FULLSCREEN;
 		}
 
-		if(App->node.child("macros").child("BORDERLESS").attribute("value").as_bool())
+		if(quick.child("BORDERLESS").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_BORDERLESS;
 		}
 
-		if(App->node.child("macros").child("RESIZABLE").attribute("value").as_bool())
+		if(quick.child("RESIZABLE").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_RESIZABLE;
 		}
 
-		if(App->node.child("macros").child("FULLSCREEN_WINDOW").attribute("value").as_bool())
+		if(quick.child("FULLSCREEN_WINDOW").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 		}

@@ -32,7 +32,6 @@ int main(int argc, char* args[])
 
 	while(state != EXIT)
 	{
-		xml_node *pawake = nullptr;
 		switch(state)
 		{
 			
@@ -52,7 +51,7 @@ int main(int argc, char* args[])
 			// Awake all modules -----------------------------------------------
 			case AWAKE:
 			LOG("AWAKE PHASE ===============================");
-			if(App->Awake(pawake) == true)
+			if(App->Awake() == true)
 				state = START;
 			else
 			{

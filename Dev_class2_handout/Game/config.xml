@@ -1,6 +1,6 @@
 <config>
   <name>Lets go</name>
-  <macros>
+  <window>
     <FULLSCREEN value ="false"></FULLSCREEN>
     <BORDERLESS value ="false"></BORDERLESS>
     <RESIZABLE value ="true"></RESIZABLE>
@@ -8,5 +8,5 @@
     <WIDTH value ="700"></WIDTH>
     <HEIGHT value ="400"></HEIGHT>
     <SCALE value ="1"></SCALE>
-  </macros>
+  </window>
 </config>

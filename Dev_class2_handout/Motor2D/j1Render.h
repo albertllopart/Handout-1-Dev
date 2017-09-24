@@ -15,7 +15,7 @@ public:
 	virtual ~j1Render();
 
 	// Called before render is available
-	bool Awake();
+	bool Awake(xml_node&);
 
 	// Called before the first frame
 	bool Start();

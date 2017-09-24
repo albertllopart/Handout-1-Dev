@@ -20,7 +20,7 @@ j1Render::~j1Render()
 {}
 
 // Called before render is available
-bool j1Render::Awake()
+bool j1Render::Awake(xml_node& quick)
 {
 	LOG("Create SDL rendering context");
 	bool ret = true;

@@ -19,7 +19,7 @@ j1Audio::~j1Audio()
 {}
 
 // Called before render is available
-bool j1Audio::Awake()
+bool j1Audio::Awake(xml_node &quick)
 {
 	LOG("Loading Audio Mixer");
 	bool ret = true;
